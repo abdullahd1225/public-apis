@@ -1,0 +1,11 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: okul-takip-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - okul_mongo_data:/data/db
+volumes:
+  okul_mongo_data:

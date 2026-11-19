@@ -1,0 +1,22 @@
+{
+  "name": "okul-takip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Okul Ödev ve Ders Takip Sistemi (Fastify + MongoDB + React/Ant Design)",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "seed": "npm --prefix server run seed",
+    "seed:demo": "npm --prefix server run seed:demo",
+    "dev": "concurrently -n api,web -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "db:up": "docker compose up -d mongo",
+    "db:down": "docker compose down",
+    "graph": "node scripts/graph.mjs",
+    "docs": "node scripts/docx-build.cjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "docx": "^9.1.1"
+  }
+}
